@@ -1,0 +1,31 @@
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<div class="container">
+    <div class="row col-md-4 col-md-offset-2 custyle">
+    <table class="table table-striped custab">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>userName</th>
+            <th>Email</th>
+            <th class="text-center">Action</th>
+        </tr>
+    </thead>
+            <tr *ngFor="let us of user">
+                <td>{{us.id}}</td>
+                <td>{{us.name}}</td>
+                <td>{{us.username}}</td>
+                <td>{{us.email}}</td>
+                <td><button (click)="delete(us.id)" class="btn btn-danger">Del</button></td>
+            </tr>
+    </table>
+    <div>
+        <button (click)="logoutpa()" class="btn btn-danger" routerLink="/login">logout</button>
+    </div>
+    </div>
+    
+</div>

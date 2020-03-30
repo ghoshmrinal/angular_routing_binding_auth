@@ -1,0 +1,50 @@
+
+<div>
+	<h1>{{message}}</h1>
+</div>
+
+<div class="container">
+			<!-- <div class="main"> -->
+				<div class="main-center">
+					<h5>Register here.</h5>
+					<form method="post" action=""(ngSubmit)="onSubmit()" #registrationForm="ngForm">
+						<div class="form-group">
+									<label for="name">Your Name</label>
+									<input required type="text" minlength="3" maxlength="10" name="name" [(ngModel)]='user.name' #name="ngModel" ngModel class="form-control"  id="name" placeholder="Enter your Name"/>
+								<div class="alert alert-danger" *ngIf="name.touched && !name.valid">
+									<div *ngIf="name.errors.required">Name is required</div>
+									<div *ngIf="name.errors.minlength">Name is too short</div>
+								</div>
+						</div>
+x
+						<div class="form-group">
+							<label for="email">Your Email</label>
+							<input required type="text"  name="email" #email="ngModel" ngModel  class="form-control" id="email" [(ngModel)]='user.email' placeholder="Enter your Email"/>
+							<div class="alert alert-danger" *ngIf="email.touched && !email.valid">Email is required</div>
+						</div>
+
+						<div class="form-group">
+									<label for="username">Username</label>
+									<input required type="text"   name="username" #username="ngModel" ngModel class="form-control" id="username" [(ngModel)]='user.username' placeholder="Enter your Username"/>
+									<div class="alert alert-danger" *ngIf="username.touched && !username.valid">UserName is required</div>
+						
+						</div>
+
+						<div class="form-group">
+									<label for="password">Password</label>
+									<input required type="password" class="form-control"  name="password" #password="ngModel" ngModel id="password" [(ngModel)]='user.password'placeholder="Enter your Password"/>
+									<div class="alert alert-danger" *ngIf="password.touched && !password.valid">Password is required</div>
+						
+						</div>
+
+						<div class="form-group">
+									<label for="confirm">Confirm Password</label>
+									<input type="password" class="form-control" name="confirm" #confirm="ngModel" ngModel id="confirm" [(ngModel)]='user.confirm' placeholder="Confirm your Password"/>
+									<div class="alert alert-danger" *ngIf="confirm.touched && !confirm.valid">Password is required</div>
+						</div>
+						<button type="submit" class="btn btn-success" [disabled]="!registrationForm.form.valid" (click)="register()" >Submit</button>	
+					</form>
+				</div><!--main-center"-->
+			<!-- </div>main -->
+			</div><!--container-->
+		

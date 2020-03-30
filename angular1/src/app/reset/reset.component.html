@@ -1,0 +1,39 @@
+
+<div class="container">
+    <form #resetForm=ngForm>
+	<div class="row">
+		<div class="col-sm-4">
+		    
+		    <div class="form-group">
+                <label for="name">UserName</label>
+                <input required type="password" minlength="3" maxlength="10" pattern="[a-z]" ngModel name="name" #name="ngModel" (change)="log(name)" class="form-control"  id="name"  placeholder="Enter your UserName"/>
+                <div class="alert alert-danger" *ngIf="name.touched && !name.valid">
+                    <div *ngIf="name.errors.required">Name is required</div>
+                    <div *ngIf="name.errors.minlength">Name is too short</div>
+                    <div *ngIf="name.errors.pattern">Name is not valid</div>
+                </div>
+            </div> 
+            <div class="form-group">
+                <label for="password">New Password</label>
+                <input required type="password" minlength="3" maxlength="10" pattern="Mrinal" ngModel name="password" #name="ngModel"  class="form-control"  id="password"  placeholder="Enter your UserName"/>
+                <div class="alert alert-danger" *ngIf="name.touched && !name.valid">
+                    <div *ngIf="name.errors.required">Password is required</div>
+                    <div *ngIf="name.errors.minlength">password is too short</div>
+                    <div *ngIf="name.errors.pattern">password is not valid</div>
+                </div>
+            </div>  
+            <div class="form-group">
+                <label for="confirm">Confirm Password</label>
+                <input required type="password" minlength="3" maxlength="10" pattern="Mrinal" ngModel name="confirm" #name="ngModel"  class="form-control"  id="confirm"  placeholder="Enter your UserName"/>
+                <div class="alert alert-danger" *ngIf="name.touched && !name.valid">
+                    <div *ngIf="name.errors.required">password is required</div>
+                    <div *ngIf="name.errors.minlength">password is too short</div>
+                    <div *ngIf="name.errors.pattern">password is not valid</div>
+                </div>
+            </div>  
+            
+		</div>  
+    </div>
+    </form>
+    <button type="submit" class="btn btn-success" [disabled]="!resetForm.form.valid" >Submit</button>
+</div>

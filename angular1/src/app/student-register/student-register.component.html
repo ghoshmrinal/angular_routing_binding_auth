@@ -1,0 +1,62 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+<div>
+    <h1>{{message}}</h1>
+</div>
+<div class="container">
+            <div class="form">
+                <div class="note">
+                    <p>Fill the Student details.</p>
+                </div>
+                <form method="post" action=""(ngSubmit)="onSubmit()" #StudentRegistrationForm="ngForm">
+                <div class="form-content">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Student First Name *" name="firstname" id="firstname" #firstname="ngModel" ngModel [(ngModel)]="student.firstname"required/>
+                            </div>
+                            <br>
+                            <div class="form-group">
+                                <input type="date" class="form-control" placeholder="Student DateOfBirth" name="dateOfBirth" id="dateOfBirth" #datOfBirth="ngModel" ngModel [(ngModel)]="student.dateOfBirth"required/>
+                            </div>
+                            <br>
+                        </div>
+                    
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Student Full Name" name="fullName" id="fullName" #fullName="ngModel" ngModel [(ngModel)]="student.fullName"required/>
+                            </div>
+                            <br>
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Student Email-Id" name="email" id="email" #email="ngModel" ngModel [(ngModel)]="student.email"required/>
+                            </div>
+                            <br>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Student class" name="standard" id="standard" #standard="ngModel" ngModel [(ngModel)]="student.standard"required/>
+                            </div>
+                            <br>
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Student RollNumber" name="rollNumber" id="rollNumber" #rollNumber="ngModel" ngModel [(ngModel)]="student.rollNumber"required/>
+                            </div>
+                            <br>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Student Address" name="address" id="address" #address="ngModel" ngModel [(ngModel)]="student.address"required/>
+                            </div>
+                            <br>
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Student password" name="password" id="password" #password="ngModel" ngModel [(ngModel)]="student.password"required/>
+                            </div>
+                            <br>
+                        </div>
+                    </div>
+                    <button type="button" class="btnSubmit" [disabled]="!StudentRegistrationForm.form.valid" (click)="studentRegister()" >Submit</button>
+                </div>
+                </form>
+            </div>
+        </div>
